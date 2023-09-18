@@ -96,7 +96,7 @@ unless have_libffi
 
   FileUtils.mkdir_p(libffi.dir)
   libffi.opt = CONFIG['configure_args'][/'(-C)'/, 1]
-  libffi.ldflags = RbConfig.expand("$(LDFLAGS) #{libpathflag([relative_from($topdir, "..")])} #{$LIBRUBYARG}".dup)
+  libffi.ldflags = RbConfig.expand("$(LDFLAGS) #{libpathflag([relative_from($topdir, "..")])}".dup)
   libffi.arch = RbConfig::CONFIG['host']
   if $mswin
     unless find_executable(as = /x64/ =~ libffi.arch ? "ml64" : "ml")
